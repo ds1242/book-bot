@@ -7,7 +7,9 @@ def main():
         letter_count = count_letters(text)
         converted = convert_dict(letter_count)
         converted.sort(key=sort_on)
+        print(f"---- Begin report of {book_path} ----")
         print_letter_count(converted)
+        print(f'--- End Report ---')
 
 def get_book_text(path):
     with open(path) as f:
