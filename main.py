@@ -7,8 +7,7 @@ def main():
         letter_count = count_letters(text)
         converted = convert_dict(letter_count)
         converted.sort(key=sort_on)
-        print(converted)
-
+        print_letter_count(converted)
 
 def get_book_text(path):
     with open(path) as f:
@@ -35,6 +34,11 @@ def convert_dict(dict):
 
 def sort_on(dict):
      return dict['letter']
+
+def print_letter_count(list_items):
+    for item in list_items:
+        if item['letter'].isalpha():
+             print(f"The '{item['letter']}' character was found {item['num']} times")
 
 
 main()
