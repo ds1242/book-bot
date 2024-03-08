@@ -5,7 +5,9 @@ def main():
         count = get_num_words(text)
         print(f'{count} is the number of words in the document')
         letter_count = count_letters(text)
-        print(letter_count)
+        converted = convert_dict(letter_count)
+        converted.sort(key=sort_on)
+        print(converted)
 
 
 def get_book_text(path):
@@ -26,5 +28,13 @@ def count_letters(text):
         else:
             count_dict[char] = 1
     return count_dict
+
+def convert_dict(dict):
+     outputList = [{"letter": key, "num":value} for key, value in dict.items()]
+     return outputList
+
+def sort_on(dict):
+     return dict['letter']
+
 
 main()
